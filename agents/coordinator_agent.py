@@ -40,6 +40,8 @@ class CoordinatorAgent(BaseAgent):
             "medicine": self.medicine_agent,
             "memory": self.memory_agent,
         }
+        for agent in self._registry.values():
+            agent.coordinator = self
 
     @property
     def _system_core(self) -> str:

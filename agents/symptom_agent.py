@@ -63,4 +63,11 @@ Your primary goal is to provide non-definitive, educational symptom-triage guida
                 "Musculoskeletal discomfort or fatigue registered. Recommend gentle range-of-motion routines."
             )
 
-        return self._respond(user_message)
+        # 3. Direct A2A Consulting Lookup
+        extra_context = ""
+        if "fever" in lower_msg:
+            # Query the Medicine Agent directly for Paracetamol safety guidance
+            med_advice = self.query_agent("medicine", "paracetamol")
+            extra_context = f"\n=== DIRECT A2A PHARMACIST CONSULTATION INFO ===\n{med_advice}\n"
+
+        return self._respond(user_message, extra_context=extra_context)

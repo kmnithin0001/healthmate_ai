@@ -20,6 +20,17 @@ class BaseAgent(ABC):
         self.memory = memory
         self.gemini = GeminiClient()
         self.logger = get_logger(self.__class__.__name__)
+        self.coordinator: Optional[BaseAgent] = None
+
+    def query_agent(self, agent_id: str, query: str) -> str:
+        """Enables direct programmatic Agent-to-Agent (A2A) consultation queries."""
+        self.logger.info(f"Direct A2A Query: {self.agent_id} ➔ {agent_id} | Query: '{query}'")
+        if not self.coordinator or not hasattr(self.coordinator, "_registry"):
+            return "A2A connection unavailable."
+        target = self.coordinator._registry.get(agent_id)
+        if not target:
+            return f"Agent '{agent_id}' not found."
+        return target.process(query)
 
     @property
     @abstractmethod
