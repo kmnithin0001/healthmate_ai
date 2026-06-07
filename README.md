@@ -1,12 +1,12 @@
-# 🏥 HealthMate AI 2.0
+# 🏥 HealthMate AI 
 
-HealthMate AI 2.0 is a production-quality, terminal-based Personal Healthcare Assistant built on a collaborative **Agent-to-Agent (A2A) Cooperative Multi-Agent Architecture** utilizing central **Shared Memory** and Google Gemini.
+HealthMate AI  is a production-quality, terminal-based Personal Healthcare Assistant built on a collaborative **Agent-to-Agent (A2A) Cooperative Multi-Agent Architecture** utilizing central **Shared Memory** and Google Gemini.
 
 ---
 
 ## 1. System Architecture
 
-HealthMate AI 2.0 coordinates multiple specialist agents sequentially, enabling them to communicate, share transient findings, and dynamically delegate tasks to one another.
+HealthMate AI coordinates multiple specialist agents sequentially, enabling them to communicate, share transient findings, and dynamically delegate tasks to one another.
 
 ```mermaid
 graph TD
