@@ -1,0 +1,5 @@
+# HealthMate AI 2.0 System Dependencies
+rich>=13.7.0
+google-genai>=0.1.1
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
